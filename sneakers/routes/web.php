@@ -32,6 +32,6 @@ Route::get('logout', function ()
 });
 
 
-Route::get('admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
-Route::get('user/index', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
+Route::get('/user/index', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');

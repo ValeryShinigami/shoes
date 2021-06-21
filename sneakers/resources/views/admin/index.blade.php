@@ -1,5 +1,5 @@
 @extends('admin.template')
 
 @section('mycontent')
-    
-@endsection
+    Hello World!
+@endsection                         
