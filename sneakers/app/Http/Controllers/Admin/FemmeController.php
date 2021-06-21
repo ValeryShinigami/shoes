@@ -5,13 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class FemmeController extends Controller
 {
     public function __construct()
     {
         return $this->middleware(['auth', 'admin']);
     }
-    
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +18,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        return view('admin.femmes.index');
     }
-    
 
     /**
      * Show the form for creating a new resource.

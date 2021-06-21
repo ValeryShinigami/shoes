@@ -33,5 +33,10 @@ Route::get('logout', function ()
 
 
 Route::get('/admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/hommes/index', [App\Http\Controllers\Admin\HommeController::class, 'index'])->name('admin.hommes.index');
+Route::get('/admin/femmes/index', [App\Http\Controllers\Admin\FemmeController::class, 'index'])->name('admin.femmes.index');
+Route::get('/admin/enfants/index', [App\Http\Controllers\Admin\EnfantController::class, 'index'])->name('admin.enfants.index');
+
 
 Route::get('/user/index', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
+
