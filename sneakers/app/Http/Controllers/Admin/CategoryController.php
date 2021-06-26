@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
-class HommeController extends Controller
+class CategoryController extends Controller
 {
     public function __construct()
     {
@@ -18,8 +20,8 @@ class HommeController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.hommes.index');
+       $categories = category::latest()->get();
+        return view ('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -29,7 +31,7 @@ class HommeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -40,7 +42,38 @@ class HommeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         //on valide les données
+        
+         $validator = Validator::make($request->all(), 
+         [
+             "name" => ['required', 'string', 'max:255', 'unique:categories'], //exists = unique mais en ++ est ce que le nom envoyé dans la requête existe deja
+         ], 
+         
+         [
+             "name.required" => "le nom est obligatoire",
+             "name.string" => "entrez une chaine de caractère valide",
+             "name.max" => "entrez au maximum 255 caractères",
+             //"name.exists" => "cette catégorie n'existe pas dans la base de donnée",
+             "name.unique" => "cette catégorie existe déjà. Veuillez en choisir une autre"
+         
+         ]);
+ 
+         if ($validator->fails()) 
+         {
+             return redirect()->back()->withErrors($validator)->withInput();
+         }
+ 
+         //et si c'est bon on rentre les infos dans la BDD
+         
+         Category::create([
+             "name" => $request->name
+         ]);
+ 
+         //puis on redirige l'utilisateur administrateur vers la page index des catégories
+ 
+         return redirect()->route("admin.categories.index")->with([
+             "success" => "Votre catégorie a été créée avec succès."
+         ]);
     }
 
     /**
