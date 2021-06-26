@@ -44,8 +44,8 @@
                     <td>{{ $category->created_at}}</td>
                     <td>{{ $category->updated_at}}</td>
                     <td>
-                        <a href="{{-- route('admin.categories.edit', $category->id) --}}" class="btn btn-sm btn-secondary">Modifier</a>
-                        <form action="{{-- route('admin.categories.delete', $category->id) --}}" method="POST" class="d-inline">
+                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-secondary">Modifier</a>
+                        <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('delete')
                             <input type="submit" value="supprimer" class="btn btn-sm btn-danger" onclick="return confirm('confirmer la suppression ?')">
