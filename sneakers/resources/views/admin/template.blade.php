@@ -2,7 +2,7 @@
 
 @section('content')
 
-<nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light">
     <div class="container-fluid justify-content-center">
       <form class="d-flex justify-content-center">
           @csrf

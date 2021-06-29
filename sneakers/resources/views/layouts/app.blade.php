@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('admin.index') }}">
                     {{ config('app.name', 'SneakersAddict') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -79,6 +79,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <!-- FOOTER -->
+  <footer class="container mt-5 d-flex justify-content-between ">
+    <p>&copy; 2021–2021 Kalombo Valéry, Dev.</p>
+    <p class="float-end"><a href="#">Back to top</a></p>
+  </footer>
     </div>
 </body>
 </html>
