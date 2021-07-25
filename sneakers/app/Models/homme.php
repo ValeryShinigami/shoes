@@ -2,20 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class hommes extends Model
+class homme extends Model
 {
     use HasFactory;
     use Sluggable;
-    protected $guarded = []; //pour faire passer les informations des inputs
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
+    protected $guarded = [];
+
     public function sluggable(): array
     {
         return [
@@ -24,4 +20,10 @@ class hommes extends Model
             ]
         ];
     }
+
+    public function posts()// une catégorie peut avoir plusieurs posts d'ou le posts au pluriel
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }

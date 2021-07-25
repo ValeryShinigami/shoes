@@ -1,8 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .card{
     filter: drop-shadow(0 0 0.75rem rgb(184, 203, 228));
 }
 
 .nikeThumb{
-    margin-left: 140px;
+     /*margin-left: 140px;*/
     
 }

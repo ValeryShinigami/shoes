@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Homme;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Post;
 
-class HommeController extends Controller
+
+class PostController extends Controller
 {
     public function __construct()
     {
@@ -20,8 +20,8 @@ class HommeController extends Controller
      */
     public function index()
     {
-       $hommes = Homme::latest()->get();
-        return view('admin.hommes.index', compact('hommes'));
+        $posts = Post::latest()->get();
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -31,7 +31,7 @@ class HommeController extends Controller
      */
     public function create()
     {
-        return view('admin.hommes.create');
+        //
     }
 
     /**
@@ -42,38 +42,7 @@ class HommeController extends Controller
      */
     public function store(Request $request)
     {
-          //on valide les données
-        
-          $validator = Validator::make($request->all(), 
-          [
-              "name" => ['required', 'string', 'max:255', 'unique:hommes'], //exists = unique mais en ++ est ce que le nom envoyé dans la requête existe deja
-          ], 
-          
-          [
-              "name.required" => "le nom est obligatoire",
-              "name.string" => "entrez une chaine de caractère valide",
-              "name.max" => "entrez au max 255 caractères",
-              //"name.exists" => "cette catégorie n'existe pas dans la base de donnée",
-              "name.unique" => "cette catégorie existe déjà. Veuillez en choisir une autre"
-          
-          ]);
-  
-          if ($validator->fails()) 
-          {
-              return redirect()->back()->withErrors($validator)->withInput();
-          }
-  
-          //et si c'est bon on rentre les infos dans la BDD
-          
-          Homme::create([
-              "name" => $request->name
-          ]);
-  
-          //puis on redirige l'utilisateur administrateur vers la page index des catégories hommes
-  
-          return redirect()->route("admin.hommes.index")->with([
-              "success" => "Votre marque a été créée avec succès."
-          ]);
+        //
     }
 
     /**

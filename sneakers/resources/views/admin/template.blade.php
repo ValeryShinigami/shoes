@@ -1,16 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@include('include.navbar')
 
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid justify-content-center">
-      <form class="d-flex justify-content-center">
-          @csrf
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
 
   <div class="col-md-10">
       <h1 class="text-center">
@@ -20,5 +12,5 @@
   </div>
 
 
-    
+   
 @endsection

@@ -2,10 +2,7 @@
 
 @section('mycontent')
 
-<div class="d-flex justify-content-around mb-3">
-<a href="{{ route('admin.categories.index')}}" type="btn btn-primary">Catégories</a>
-<a href="{{-- --}}">Articles</a>
-</div>
+
 <div class="nikeThumb container">
     <div class="row row-cols-1 row-cols-md-3 g-3">
         <div class="col ">
@@ -22,7 +19,7 @@
                 <div class="card-body text-center mb-3">
                     <a href="{{ route('admin.femmes.index') }}">Femmes</a>
                 </div>
-                <img src="{{ asset('imagesneak/femme.jpeg')}}" class="card-img-bottom h-100" alt="femmes">
+                <img  src="{{ asset('imagesneak/femme.jpeg')}}" class="card-img-bottom h-100" alt="femmes">
             </div>
         </div>
         
@@ -36,8 +33,6 @@
         </div>
     </div>
     
-</div>
-
-        
+</div>   
 
 @endsection                         
