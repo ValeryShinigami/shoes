@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger("homme_id"); //pour lier l'identifiant de la category a laquelle appartiendra ce post
             $table->string('title');
             $table->string('slug');
+            $table->string('price');
             $table->string('image')->nullable(); //pour suivre le chemin qui permet de recupérer une image (elles ne sont pas dans la BDD) NULLABLE permet de dire que ce n'est pas obligatoire
             $table->longText('content'); //longText permet une grande mémoire à la redaction des articles
             $table->boolean('published')->default(false); //donner la possibilité au redacteur de sauvegarder ses données avant de les publier FASLE = tout article ecrit ne sera pas publié

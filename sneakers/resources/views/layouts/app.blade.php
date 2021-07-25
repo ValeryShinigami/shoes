@@ -79,6 +79,7 @@
 
         <main class="py-4">
             @yield('content')
+            {{View::make('include.footer')}}
         </main>
     </div>
 </body>

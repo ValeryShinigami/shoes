@@ -1,11 +1,23 @@
 @extends('admin.template')
 
+@section('datatables') {{--ajout du cloud tables --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+
+    <script>
+        $(document).ready( function () {
+        $('#table').DataTable();
+        } );
+    </script>
+
+@endsection
+
 @section('h1', 'Liste des articles')
 
 @section('mycontent')
 
 <div class="d-flex justify-content-end align-items-center">
-        <a href="{{--route('admin.posts.create')--}}" class="btn btn-secondary">Nouvel article</a>
+        <a href="{{route('admin.posts.create')}}" class="btn btn-secondary">Nouvel article</a>
 </div>
 
 @if (session('warning'))
@@ -35,6 +47,7 @@
                 <th>Image</th>
                 <th>Titre</th>
                 <th>Marque</th>
+                <th>Prix</th>
                 <th>Voir Contenu</th>
                 <th>Publié ?</th>
                 <th>Paramètres</th>
@@ -48,6 +61,7 @@
                         <td><img src="{{ asset($post->image) }}" width='150' height="150" alt="image"></td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->homme->name }}</td> {{--pour récupérer le nom de la catégorie pour la jointure --}}
+                        <td>{{ $post->price }}</td>
                         <td>
                             <a href="{{--route('admin.posts.show', $post->id)--}}" class="lire btn btn-sm btn-info">Voir</a>
                         </td>
