@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\produits;
 use Illuminate\Http\Request;
 
-class FemmeController extends Controller
+class ProduitController extends Controller
 {
     public function __construct()
     {
@@ -18,7 +19,9 @@ class FemmeController extends Controller
      */
     public function index()
     {
-        return view('admin.femmes.index');
+        $produits = produits::all();
+        //dd($produits) pour vérifier si on récupre bien les données produits;
+        return view('admin.produits.index', compact('produits'));
     }
 
     /**

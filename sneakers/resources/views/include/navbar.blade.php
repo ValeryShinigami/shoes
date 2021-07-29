@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            <a class="nav-link active" aria-current="page" href="{{route('admin.index')}}">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Promotion</a>
@@ -20,9 +20,9 @@
               Catégories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="{{ route('admin.hommes.index') }}">Hommes</a></li>
-              <li><a class="dropdown-item" href="#">Femmes</a></li>
-              <li><a class="dropdown-item" href="#">Enfants</a></li>
+              <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Hommes</a></li>
+              <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Femmes</a></li>
+              <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Enfants</a></li>
             </ul>
           </li>
           <li class="nav-item">

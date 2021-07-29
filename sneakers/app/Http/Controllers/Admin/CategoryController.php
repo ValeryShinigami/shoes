@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       $categories = category::latest()->get();
+       $categories = category::all();
         return view ('admin.categories.index', compact('categories'));
     }
 
@@ -34,15 +35,41 @@ class CategoryController extends Controller
         return view('admin.categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    //public function store(Request $request)
     
+    public function store(Request $request)
+    {
+        //on valide les données
+        $validator = Validator::make($request->all(), 
+        [
+            "name" => ["required", "string", "max:255", 'unique:categories'],
+            "sexe" => ["required", "string"] 
+        ], 
+
+        [
+            "name.required" => "le titre est obligatoire",
+            "name.string" => "Entrez une chaine de caratère",
+            "name.max" => "Maximum 255 caractères",
+
+            "sexe.required" => "le sexe est obligatoire",
+            "sexe.string" => "Entrez une chaine de caratère",
+
+        ]);
+
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         
+        Category::create([
+            "name" => $request->name,
+            "sexe" => $request->sexe
+        ]);
+
+        return redirect()->route('admin.categories.index')->with([
+            "success" => "votre article vient d'être sauvegardé"
+        ]);
+    }
+   
 
     /**
      * Display the specified resource.

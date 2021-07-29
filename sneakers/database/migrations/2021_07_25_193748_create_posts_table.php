@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("homme_id"); //pour lier l'identifiant de la category a laquelle appartiendra ce post
+            $table->unsignedBigInteger("category_id"); //pour lier l'identifiant de la category a laquelle appartiendra ce post
             $table->string('title');
             $table->string('slug');
             $table->string('price');
@@ -25,8 +25,7 @@ class CreatePostsTable extends Migration
             $table->timestamp('published_at')->nullable(); //date à laquelle on publie l'article
             $table->softDeletes(); //on ne supprime pas on le déplace comme une sorte de corbeil
             $table->timestamps();
-
-            $table->foreign('homme_id')->references('id')->on('hommes'); //
+            $table->foreign('category_id')->references('id')->on('categories'); //
         });
     }
 

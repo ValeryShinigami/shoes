@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,10 +27,8 @@ class post extends Model
         ];
     }
 
-    
-
-    public function homme()
+    public function category()
     {
-        return $this->belongsTo(Homme::class);
+        return $this->belongsTo(Category::class);
     }
 }

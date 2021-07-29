@@ -1,6 +1,6 @@
 @extends('admin.template')
 
-@section('h1', 'Nouvelle Catégorie')
+@section('h1', 'Nouvelle Catégorie (marques)')
     
 @section('mycontent')
     <div class="container">
@@ -8,8 +8,13 @@
             @csrf
 
             <div class="form-group">
-                <label for="nanme">Nom</label>
+                <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}"> 
+                <div class="text-danger">{{ $errors->first('name', ':message')}}</div>
+            </div>
+            <div class="form-group">
+                <label for="sexe">Sexe</label>
+                <input type="text" name="sexe" id="sexe" class="form-control" value="{{ old('name') }}"> 
                 <div class="text-danger">{{ $errors->first('name', ':message')}}</div>
             </div>
             <div class="form-group text-center">
