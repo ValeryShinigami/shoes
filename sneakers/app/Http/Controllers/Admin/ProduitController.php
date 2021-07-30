@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\produits;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class ProduitController extends Controller
 {
@@ -29,9 +30,14 @@ class ProduitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //dd($request->id);
+        //Création du produit vu en détail
+         $produit = produits::find($request->id);
+        //return view ('admin.produits.create', compact('produit'));
+        //dd($produit);
+        return view ('admin.produits.create', compact('produit')); //on récupère les produit par id de la BDD
     }
 
     /**
@@ -43,7 +49,10 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         //
+       
     }
+
+    
 
     /**
      * Display the specified resource.

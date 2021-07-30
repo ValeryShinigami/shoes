@@ -3,7 +3,7 @@
 @section('mycontent')
 
 
-<h1 class="d-flex justify-content-center">Produits hommes</h1>
+<h1 class="d-flex justify-content-center">Produits homme</h1>
 
 <div class="album py-5 bg-light ">
       <div class="container">  
@@ -19,9 +19,9 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->name}}</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
+                    <a href="{{ route('admin.produits.create',['id' => $produit->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                   </div>
-                  <div class="text-muted">{{$produit->prixHT}}.€</div>
+                  <div class="text-muted">{{number_format($produit->prixHT, 2)}}.€</div> {{--number_format() fonction php pour indiquer le nombre après la virgule --}}
                 </div>
               </div>
             </div>

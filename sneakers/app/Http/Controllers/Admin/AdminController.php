@@ -31,9 +31,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $resquest)
     {
-        //
+        //pour récupérer les produits en nouveautés
+        $product = product::find($resquest->id);
+        return view ('admin.create', compact('product'));
+        
     }
 
     /**
