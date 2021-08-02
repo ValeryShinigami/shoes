@@ -33,7 +33,7 @@ Route::get('logout', function ()
 
 Route::get('/user/index', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
 Route::get('/admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
-//route pour la création des produits en nouveautés
+//route pour la création des produits en nouveautés sur la page principale
 Route::get('/admin/index/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.create');
 
 
@@ -51,7 +51,11 @@ Route::get('/admin/posts/create', [App\Http\Controllers\Admin\PostController::cl
 Route::post('/admin/posts/store', [App\Http\Controllers\Admin\PostController::class, 'store'])->name('admin.posts.store');
 
 
-//création de la route produits homme
+//création de la route produits homme OK
 Route::get('/admin/produits/index', [App\Http\Controllers\Admin\ProduitController::class, 'index'])->name('admin.produits.index');
-//création de la route du détail du produit homme
+//création de la route du détail du produit homme OK
 Route::get('/admin/produits/create/{id}', [App\Http\Controllers\Admin\ProduitController::class, 'create'])->name('admin.produits.create');
+
+
+//création de la route des Marques pour trier les produits par marque OK
+Route::get('/admin/marques/create/{id}', [App\Http\Controllers\Admin\MarqueController::class, 'create'])->name('admin.marques.create');

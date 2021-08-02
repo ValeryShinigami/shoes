@@ -50,6 +50,7 @@
               <p class="card-text">{{$product->description}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">{{--$product->marque->name--}}</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">{{$product->name}}</button>
                   <a href="{{ route('admin.create', ['id' => $product->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                 </div>

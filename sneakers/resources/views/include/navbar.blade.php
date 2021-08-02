@@ -25,6 +25,17 @@
               <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Enfants</a></li>
             </ul>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+              Marques Homme
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              @foreach ($marques as $marque)
+              <li><a class="dropdown-item" href="{{route('admin.marques.create', ['id' => $marque->id])}}">{{$marque->name}}</a></li> 
+              @endforeach
+            </ul>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route ('admin.posts.index')}}">Articles</a>
           </li>

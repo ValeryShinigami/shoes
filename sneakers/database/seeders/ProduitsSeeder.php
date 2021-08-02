@@ -19,63 +19,72 @@ class ProduitsSeeder extends Seeder
             "name" => "a",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "a.jpeg"
+            "photoPrincipal" => "a.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "b",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "b.jpeg"
+            "photoPrincipal" => "b.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "c",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "c.jpeg"
+            "photoPrincipal" => "c.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "d",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "d.jpeg"
+            "photoPrincipal" => "d.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "e",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "e.jpeg"
+            "photoPrincipal" => "e.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "f",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "f.jpeg"
+            "photoPrincipal" => "f.jpeg",
+            "marque_id" => "1"
         ]);
 
         $produits = produits::create([
             "name" => "g",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "g.jpeg"
+            "photoPrincipal" => "g.jpeg",
+            "marque_id" => "3"
         ]);
 
         $produits = produits::create([
             "name" => "i",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "i.jpeg"
+            "photoPrincipal" => "i.jpeg",
+            "marque_id" => "5"
         ]);
 
         $produits = produits::create([
             "name" => "j",
             "prixHT" => "400",
             "description" => "jolie paire de jordan",
-            "photoPrincipal" => "j.jpeg"
+            "photoPrincipal" => "j.jpeg",
+            "marque_id" => "4"
         ]);
     }
 }

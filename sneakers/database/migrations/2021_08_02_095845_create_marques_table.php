@@ -4,21 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProduitsTable extends Migration
+class CreateMarquesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up() //quand on fait php artisan migrate la fonction up est lançée
     {
-        Schema::create('produits', function (Blueprint $table) {
+        Schema::create('marques', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->float('prixHT');
-            $table->string('photoPrincipal');
+            $table->boolean('isOnline')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateProduitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produits');
+        Schema::dropIfExists('marques');
     }
 }

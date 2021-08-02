@@ -3,7 +3,7 @@
 @section('mycontent')
 
 
-<h1 class="d-flex justify-content-center">Tous les produits homme</h1>
+<h1 class="d-flex justify-content-center">homme</h1>
 
 <div class="album py-5 bg-light ">
       <div class="container">  
@@ -18,7 +18,7 @@
                 <p class="card-text">{{$produit->description}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">{{--$product->name--}}</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->marque->name}}</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->name}}</button>
                     <a href="{{ route('admin.produits.create',['id' => $produit->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                   </div>

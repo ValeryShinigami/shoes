@@ -1,19 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\marque;
 use App\Models\produits;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class ProduitController extends Controller
+class MarqueController extends Controller
 {
-    public function __construct()
-    {
-        return $this->middleware(['auth', 'admin']);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +16,8 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        $produits = produits::all();
-        //dd($produits) pour vérifier si on récupre bien les données produits;
-        $marques = marque::where('isOnline', 1)->get();
-        return view('admin.produits.index', compact('produits', 'marques'));
+        //
+     
     }
 
     /**
@@ -34,13 +27,16 @@ class ProduitController extends Controller
      */
     public function create(Request $request)
     {
-        //dd($request->id);
-        //Création du produit vu en détail
-         $produit = produits::find($request->id);
-        //return view ('admin.produits.create', compact('produit'));
-        //dd($produit);
+        //
+        //retourne la vue par marques
+        // récuperer les marques isOnline == 1
         $marques = marque::where('isOnline', 1)->get();
-        return view ('admin.produits.create', compact('produit','marques')); //on récupère les produit par id de la BDD
+        //dd($marques);
+        $produits = produits::where('marque_id', $request->id)->get();
+        return view ('admin.marques.create', compact('produits', 'marques'));
+        
+        
+        
     }
 
     /**
@@ -52,10 +48,7 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         //
-       
     }
-
-    
 
     /**
      * Display the specified resource.
