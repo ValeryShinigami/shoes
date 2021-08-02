@@ -54,7 +54,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">{{$product->name}}</button>
                   <a href="{{ route('admin.create', ['id' => $product->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                 </div>
-                <div class="text-muted">{{number_format($product->prixHT, 2)}}.€</div>
+                <div class="text-muted">{{number_format($product->prixHT, 2)}} &nbsp;€</div>
               </div>
             </div>
           </div>
