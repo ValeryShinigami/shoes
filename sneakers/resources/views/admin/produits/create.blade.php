@@ -17,6 +17,11 @@
         <div class="card-body">
           <h5 class="card-title">{{$produit->name}}</h5>
           <p class="card-text">{{$produit->description}}</p>
+
+          @foreach ($produit->tag as $tag)
+          <a class="text-white btn btn-primary"  href="{{route('admin.tags.create', ['id' =>$tag->id])}}">{{$tag->name}}</a>
+          @endforeach
+
           <p class="card-text"><small class="text-muted">{{number_format($produit->prixHT, 2)}}.€</small></p>
           <div class="mb-3">
               <label for="taille">Taille</label>

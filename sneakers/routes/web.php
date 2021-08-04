@@ -59,3 +59,8 @@ Route::get('/admin/produits/create/{id}', [App\Http\Controllers\Admin\ProduitCon
 
 //création de la route des Marques pour trier les produits par marque OK
 Route::get('/admin/marques/create/{id}', [App\Http\Controllers\Admin\MarqueController::class, 'create'])->name('admin.marques.create');
+
+
+//création de la route des tags
+Route::get('/admin/tags/index/{id}', [App\Http\Controllers\Admin\TagController::class, 'create'])->name('admin.tags.create');
+

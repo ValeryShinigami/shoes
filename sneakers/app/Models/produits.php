@@ -14,4 +14,9 @@ class produits extends Model
     {
         return $this->belongsTo(marque::class);
     }
+
+    public function tag()
+    {
+        return $this->belongsToMany(tag::class);
+    }
 }
