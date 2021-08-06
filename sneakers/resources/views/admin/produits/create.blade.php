@@ -11,6 +11,7 @@
     
     <div class="row g-0">
       <div class="col-md-4">
+    
         <img src="{{asset('produitsImages/'.$produit->photoPrincipal)}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
@@ -22,17 +23,24 @@
           <a class="text-white btn btn-primary"  href="{{route('admin.tags.create', ['id' =>$tag->id])}}">{{$tag->name}}</a>
           @endforeach
 
-          <p class="card-text"><small class="text-muted">{{number_format($produit->prixHT, 2)}}.€</small></p>
+          <p class="card-text"><small class="text-muted">{{$produit->prixTTC()}} €</small></p>
           <div class="mb-3">
-              <label for="taille">Taille</label>
-              <select name="taille" id="taille" class="form-control">
-                  <option selected >--</option>
+
+            <form action="{{route('admin.carts.add', ['id' => $produit->id])}}" method="POST" id="ajoutPanier">
+              @csrf
+              <label for="size">Taille</label>
+              <select name="size" id="size" class="form-control mb-2">
+                  <option selected disabled >--</option>
                   <option value="40">40</option>
                   <option value="45">45</option>
                   <option value="46">46</option>
               </select>
+              <label for="quantity">Quantité</label>
+              <input type="number" value="1" name="quantity" id="quantity" class="form-control">
+            </form>
+            <button type="submit" class="btn btn-success mt-2" form="ajoutPanier">Ajouter au panier</button>{{-- bouton relié au formulaire --}}
           </div>
-          <a href="#" class="btn btn-success">Ajouter au panier</a>
+          
         </div>
       </div>
     </div>

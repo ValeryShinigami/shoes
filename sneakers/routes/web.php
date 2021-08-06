@@ -61,6 +61,11 @@ Route::get('/admin/produits/create/{id}', [App\Http\Controllers\Admin\ProduitCon
 Route::get('/admin/marques/create/{id}', [App\Http\Controllers\Admin\MarqueController::class, 'create'])->name('admin.marques.create');
 
 
-//création de la route des tags
+//création de la route des tags OK
 Route::get('/admin/tags/index/{id}', [App\Http\Controllers\Admin\TagController::class, 'create'])->name('admin.tags.create');
+
+//création de la route Cart
+Route::get('/admin/carts/index', [App\Http\Controllers\Admin\CartController::class, 'index'])->name('admin.carts.index');
+Route::post('/admin/carts/add/{id}', [App\Http\Controllers\Admin\CartController::class, 'add'])->name('admin.carts.add');
+
 
