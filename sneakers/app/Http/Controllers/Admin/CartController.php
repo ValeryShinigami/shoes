@@ -24,6 +24,7 @@ class CartController extends Controller
         return view('admin.carts.index', compact('cartCollection', 'total'));
     }
 
+    //fonction représentant le STORE
     public function add(Request $request) //on recupere lobjet request et le produit dans la table
     {
         $produit = produits::find($request->id);
@@ -42,6 +43,18 @@ class CartController extends Controller
 
         
     }
+
+    public function update(Request $request, $id)
+    {
+        //
+        Cart::update($id, [
+            'quantity' => $request->quantity +1,
+            
+        ]);
+        return redirect(route('admin.carts.index'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -93,10 +106,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    //public function update(Request $request, $id)
+   // {
         //
-    }
+   // }
 
     /**
      * Remove the specified resource from storage.
@@ -107,5 +120,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+        Cart::remove($id);
+        return redirect()->route('admin.carts.index');
     }
 }
