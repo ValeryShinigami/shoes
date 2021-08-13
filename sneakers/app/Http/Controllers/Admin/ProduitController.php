@@ -41,6 +41,8 @@ class ProduitController extends Controller
         //dd($produit);
         $marques = marque::where('isOnline', 1)->get();
         return view ('admin.produits.create', compact('produit','marques')); //on récupère les produit par id de la BDD
+
+        
     }
 
     /**
@@ -52,7 +54,6 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         //
-       
     }
 
     
