@@ -21,7 +21,7 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        $produits = produits::all();
+        $produits = produits::all(); //->random(6) récup aléatoire 6 images
         //dd($produits) pour vérifier si on récupre bien les données produits;
         $marques = marque::where('isOnline', 1)->get();
         return view('admin.produits.index', compact('produits', 'marques'));

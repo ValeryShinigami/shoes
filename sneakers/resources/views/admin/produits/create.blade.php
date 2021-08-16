@@ -36,9 +36,11 @@
                   <option value="46">46</option>
               </select>
               <label for="quantity">Quantité</label>
-              <input type="number" value="1" name="quantity" id="quantity" class="form-control">
+              {{-- value="1" on démarre la quantité à 1 --}}
+              <input type="number" value="1" name="quantity" id="quantity" class="form-control"> 
             </form>
-            <button type="submit" class="btn btn-success mt-2" form="ajoutPanier">Ajouter au panier</button>{{-- bouton relié au formulaire --}}
+            {{-- bouton relié au formulaire grace à id=ajoutPanier et form=ajoutPanier --}}
+            <button type="submit" class="btn btn-success mt-2" form="ajoutPanier">Ajouter au panier</button>
           </div>
           
         </div>

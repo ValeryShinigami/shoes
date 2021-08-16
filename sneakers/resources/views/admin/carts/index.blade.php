@@ -5,7 +5,8 @@
         {{--dd($cartCollection)--}}
         <section class="py-5">
             <div class="container">
-                    <h1 class="jumbotron-heading"> <span class="badge badge-primary ">Panier </span></h1>
+                    <h1 class="jumbotron-heading"> <span class="badge badge-primary ">Cart</span></h1>
+                    <a class="nav-link" href="{{route('admin.carts.index')}}">Panier <span class="badge badge-pill badge dark"><img src="https://img.icons8.com/ios/35/000000/sneakers.png"/>{{Cart::getTotalQuantity()}}</span></a>
                 <table class="table table-bordered table-responsive-sm">
                     <thead>
                         <tr>
@@ -37,10 +38,12 @@
                             <form action="{{route('admin.carts.update', $produit->id)}}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <input style="display: inline-block" id="qte" class="form-control col-sm-4" type="number" value="{{$produit->quantity}}">
+                                <input style="display: inline-block" name="quantity" class="form-control col-sm-4" type="number" value="{{$produit->quantity}}">
+                                <button type="submit" class="btn btn-sm btn-primary" >update</button>
+
                             </form>
-                             
                         </td>
+                       
                         
                         <td>
                             <form action="{{route('admin.carts.delete', $produit->id)}}" method="POST">

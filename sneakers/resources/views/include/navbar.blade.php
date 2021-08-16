@@ -13,7 +13,7 @@
             <a class="nav-link" href="#">Promotion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Panier</a>
+            <a class="nav-link" href="{{route('admin.carts.index')}}">Panier <img src="https://img.icons8.com/ios/20/000000/sneakers.png"/> {{Cart::getTotalQuantity()}}</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">

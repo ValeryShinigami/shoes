@@ -46,16 +46,17 @@ class CartController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        //fonction permettant d'augmenter diminuer la quantité
         Cart::update($id, [
-            'quantity' => $request->quantity +1,
+            //'quantity' => $request->quantity +1,
+            'quantity' => ['relative' => false, 'value'=> $request->quantity]
+            //relative' => false,
+            //'value' => $request->quantity
             
         ]);
         return redirect(route('admin.carts.index'));
     }
-
-
-
+    
     /**
      * Show the form for creating a new resource.
      *
