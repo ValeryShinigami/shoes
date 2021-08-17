@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Models\marque;
+use App\Models\product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -18,7 +20,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        //return view('user.index');
+        $products = product::all();
+        //dd($products);
+        $marques = marque::where('isOnline', 1)->get(); //pour que l'on puisse récupérer les marques sinon on a une erreur car il ne reconnait pas
+        return view('admin.index', compact('products', 'marques'));
+    
     }
 
     /**
