@@ -81,10 +81,10 @@ class ProduitsSeeder extends Seeder
         ]);
 
         $produits = produits::create([
-            "name" => "j",
+            "name" => "ferrari",
             "prixHT" => "400",
-            "description" => "sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
-            "photoPrincipal" => "j.jpeg",
+            "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+            "photoPrincipal" => "ferrari.jpeg",
             "marque_id" => "4"
         ]);
 
@@ -194,6 +194,41 @@ class ProduitsSeeder extends Seeder
         ]);
 
                 //PUMA
+                $produits = produits::create([
+                    "name" => "spider",
+                    "prixHT" => "350",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "spider.jpeg",
+                    "marque_id" => "4"
+                ]);
+                $produits = produits::create([
+                    "name" => "fierce",
+                    "prixHT" => "350",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "fierce.jpeg",
+                    "marque_id" => "4"
+                ]);
+                $produits = produits::create([
+                    "name" => "ideas",
+                    "prixHT" => "350",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "ideas.jpeg",
+                    "marque_id" => "4"
+                ]);
+                $produits = produits::create([
+                    "name" => "ideas2",
+                    "prixHT" => "350",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "ideas2.jpeg",
+                    "marque_id" => "4"
+                ]);
+                $produits = produits::create([
+                    "name" => "disc",
+                    "prixHT" => "350",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "disc.jpeg",
+                    "marque_id" => "4"
+                ]);
                 //BALENCIAGA
     }
 }
