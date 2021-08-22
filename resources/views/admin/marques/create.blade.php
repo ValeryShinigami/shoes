@@ -15,10 +15,10 @@
             <div class="card shadow-sm">
               <img class="card-img-top" width="100%" height="225" src="{{asset('produitsImages/'.$produit->photoPrincipal)}}" alt="shoes">
               <div class="card-body">
+                <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->marque->name}}</button>
                 <p class="card-text">{{$produit->description}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->marque->name}}</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->name}}</button>
                     <a href="{{ route('admin.produits.create',['id' => $produit->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                   </div>

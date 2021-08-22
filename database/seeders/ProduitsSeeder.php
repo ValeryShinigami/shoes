@@ -130,22 +130,6 @@ class ProduitsSeeder extends Seeder
         ]);
 
         $produits = produits::create([
-            "name" => "Nano",
-            "prixHT" => "200",
-            "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
-            "photoPrincipal" => "Nano.jpeg",
-            "marque_id" => "2"
-        ]);
-
-        $produits = produits::create([
-            "name" => "NanoX1",
-            "prixHT" => "200",
-            "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
-            "photoPrincipal" => "NanoX1.jpeg",
-            "marque_id" => "2"
-        ]);
-
-        $produits = produits::create([
             "name" => "Iverson",
             "prixHT" => "500",
             "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",

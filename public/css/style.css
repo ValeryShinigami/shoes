@@ -5,3 +5,15 @@
 .card{
     filter: drop-shadow(0 0 0.75rem rgb(184, 203, 228));
 }
+
+.facebook:hover, .insta:hover, .snap:hover, .card-img-top:hover{
+    transform: scale(1.2);
+}
+
+.facebook, .insta, .snap{
+    transition: 0,9s;
+}
+
+.card-img-top{
+    transition: 0.92s; 
+}
