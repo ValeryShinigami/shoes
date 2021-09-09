@@ -39,7 +39,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input style="display: inline-block" name="quantity" class="form-control col-sm-4" type="number" value="{{$produit->quantity}}">
-                                <button type="submit" class="btn btn-sm btn-primary" >update</button>
+                                <button type="submit" class="btn btn-sm btn-primary" >modifier</button>
 
                             </form>
                         </td>
@@ -80,7 +80,11 @@
                     </tr>
                     </tfoot>
                 </table>
-                <a class="btn btn-block btn-outline-dark" href="">Commander</a>
+                <form action="{{--route()--}}" method="">
+                    <a class="btn btn-block btn-outline-dark" href="">Commander</a>
+                    <button type="submit" class="btn btn-block btn-outline-dark">Payer</button>
+                </form>
+                
             </div>
         </section>
     

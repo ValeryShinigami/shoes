@@ -22,6 +22,7 @@ class CartController extends Controller
         //dd($cartCollection);
         $total = Cart::getTotal();//pour récuperer le total dans le package github
         return view('admin.carts.index', compact('cartCollection', 'total'));
+         
     }
 
     //fonction représentant le STORE
@@ -37,8 +38,6 @@ class CartController extends Controller
                 'attributes' => array(
                     'size'=>$request->size, 'photo'=>$produit->photoPrincipal)
         ));
-
-        session()->flash('success', 'Product is Added to Cart Successfully !');
         return redirect(route('admin.carts.index'));
 
         

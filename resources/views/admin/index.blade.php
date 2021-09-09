@@ -17,7 +17,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body text-center mb-3">
-                    <a href="{{--route('admin.femmes.index')--}}">Femmes</a>
+                    <a href="{{--route('admin.produitsf.index')--}}">Femmes</a>
                 </div>
                 <img  src="{{ asset('imagesneak/femme.jpeg')}}" class="card-img-bottom h-100" alt="femmes">
             </div>
@@ -50,7 +50,6 @@
               <p class="card-text">{{$product->description}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">{{--$product->marque->name--}}</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">{{$product->name}}</button>
                   <a href="{{ route('admin.create', ['id' => $product->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                 </div>

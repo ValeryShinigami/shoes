@@ -25,6 +25,8 @@ class ProduitController extends Controller
         $produits = produits::paginate(6); //->random(6) récup aléatoire 6 images
         //dd($produits) pour vérifier si on récupre bien les données produits;
         $marques = marque::where('isOnline', 1)->get();
+        //condition ternaire pour disponible ou non pour le stock
+        
         return view('admin.produits.index', compact('produits', 'marques'));
     }
 
@@ -42,6 +44,7 @@ class ProduitController extends Controller
         //dd($produit);
         $marques = marque::where('isOnline', 1)->get();
         return view ('admin.produits.create', compact('produit','marques')); //on récupère les produit par id de la BDD
+
 
         
     }

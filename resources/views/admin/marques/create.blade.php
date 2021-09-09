@@ -22,7 +22,7 @@
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->name}}</button>
                     <a href="{{ route('admin.produits.create',['id' => $produit->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
                   </div>
-                  <div class="text-muted">{{number_format($produit->prixHT, 2)}} &nbsp;€</div> {{--number_format() fonction php pour indiquer le nombre après la virgule --}}
+                  <div class="text-muted">{{number_format(($produit->prixHT)*1.2, 2)}} &nbsp;€</div> {{--number_format() fonction php pour indiquer le nombre après la virgule --}}
                 </div>
               </div>
             </div>
