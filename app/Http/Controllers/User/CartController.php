@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\user;
 
-
-use App\Models\produits;
 use Cart;
+use App\Models\produits;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Darryldecode\Cart\Cart as CartCart;
 
 class CartController extends Controller
 {
@@ -18,16 +16,18 @@ class CartController extends Controller
      */
     public function index()
     {
-        //retourne la vue du panier 
-        $cartCollection = Cart::getContent(); //pour voir la collection que l'on a dans le pannier
-        //dd($cartCollection);
-        $total = Cart::getTotal();//pour récuperer le total dans le package github
-        return view('admin.carts.index', compact('cartCollection', 'total'));
-         
+        //
+         //retourne la vue du panier 
+         $cartCollection = Cart::getContent(); //pour voir la collection que l'on a dans le pannier
+         //dd($cartCollection);
+         $total = Cart::getTotal();//pour récuperer le total dans le package github
+         return view('user.carts.index', compact('cartCollection', 'total'));
+          
     }
 
+
     //fonction représentant le STORE
-    public function add(Request $request) //on recupere lobjet request et le produit dans la table
+    public function add(Request $request) //on recupere l'objet request et le produit dans la table
     {
         $produit = produits::find($request->id);
         //ajouter un produit au panier
@@ -39,7 +39,7 @@ class CartController extends Controller
                 'attributes' => array(
                     'size'=>$request->size, 'photo'=>$produit->photoPrincipal)
         ));
-        return redirect(route('admin.carts.index'));
+        return redirect(route('user.carts.index'));
 
         
     }
@@ -54,9 +54,9 @@ class CartController extends Controller
             //'value' => $request->quantity
             
         ]);
-        return redirect(route('admin.carts.index'));
+        return redirect(route('user.carts.index'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -107,10 +107,7 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //public function update(Request $request, $id)
-   // {
-        //
-   // }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -122,7 +119,6 @@ class CartController extends Controller
     {
         //
         Cart::remove($id);
-        return redirect()->route('admin.carts.index');
+        return redirect()->route('user.carts.index');
     }
-
 }

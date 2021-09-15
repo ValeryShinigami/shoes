@@ -17,3 +17,29 @@
 .card-img-top{
     transition: 0.30s; 
 }
+
+#cross-fading img {
+    width: 100%;
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+   
+  #cross-fading {
+    position:relative;
+    margin:0 auto;
+  }
+
+  #cross-fading img#top:hover {
+    opacity:0;
+  }
+
+  @media screen and (max-width: 767px){
+      .teste1{
+          height: 425px;
+      }
+
+  }
