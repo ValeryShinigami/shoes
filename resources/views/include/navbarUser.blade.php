@@ -28,7 +28,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               @foreach ($marques as $marque)
-              <li><a class="dropdown-item" href="{{route('user.marques.create', ['id' => $marque->id])}}">{{$marque->name}}</a></li> 
+              <li><a class="dropdown-item" href="{{route('user.maintenance.index')}}">{{$marque->name}}</a></li> 
               @endforeach
             </ul>
           </li>
@@ -38,7 +38,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               @foreach ($marques as $marque)
-              <li><a class="dropdown-item" href="{{route('user.marques.create', ['id' => $marque->id])}}">{{$marque->name}}</a></li> 
+              <li><a class="dropdown-item" href="{{route('user.maintkids.index')}}">{{$marque->name}}</a></li> 
               @endforeach
             </ul>
           </li>

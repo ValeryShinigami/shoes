@@ -82,3 +82,15 @@ Route::get('/user/cartsp/index', [App\Http\Controllers\User\CartpController::cla
 Route::post('/user/cartsp/add/{id}', [App\Http\Controllers\User\CartpController::class, 'add'])->name('user.cartsp.add');
 Route::put('/user/cartsp/update/{id}', [App\Http\Controllers\User\CartpController::class, 'update'])->name('user.cartsp.update');
 Route::delete('/user/cartsp/delete/{id}', [App\Http\Controllers\User\CartpController::class, 'destroy'])->name('user.cartsp.delete');
+
+
+Route::get('/admin/cartsp/index', [App\Http\Controllers\Admin\CartpController::class, 'index'])->name('admin.cartsp.index');
+Route::post('/admin/cartsp/add/{id}', [App\Http\Controllers\Admin\CartpController::class, 'add'])->name('admin.cartsp.add');
+Route::put('/admin/cartsp/update/{id}', [App\Http\Controllers\Admin\CartpController::class, 'update'])->name('admin.cartsp.update');
+Route::delete('/admin/cartsp/delete/{id}', [App\Http\Controllers\Admin\CartpController::class, 'destroy'])->name('admin.cartsp.delete');
+
+//création de la route MAINTENANCE
+//route maintenance femmes
+Route::get('/user/maintenance/index', [App\Http\Controllers\User\MaintenanceController::class, 'index'])->name('user.maintenance.index');
+//route maintenance kids
+Route::get('/user/maintkids/index', [App\Http\Controllers\User\MaintkidsController::class, 'index'])->name('user.maintkids.index');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 use Cart;
 use App\Models\product;
 use Illuminate\Http\Request;
@@ -16,28 +16,28 @@ class CartpController extends Controller
     public function index()
     {
         //
-           //retourne la vue du panier 
-           $cartCollection = Cart::getContent(); //pour voir la collection que l'on a dans le pannier
-           //dd($cartCollection);
-           $total = Cart::getTotal();//pour récuperer le total dans le package github
-           return view('user.cartsp.index', compact('cartCollection', 'total'));
+          //retourne la vue du panier 
+          $cartCollection = Cart::getContent(); //pour voir la collection que l'on a dans le pannier
+          //dd($cartCollection);
+          $total = Cart::getTotal();//pour récuperer le total dans le package github
+          return view('admin.cartsp.index', compact('cartCollection', 'total'));
     }
 
-      //fonction représentant le STORE
-      public function add(Request $request) //on recupere l'objet request et le produit dans la table
-      {
-          $product = product::find($request->id);
-          //ajouter un produit au panier
-              Cart::add(array(
-                  'id' => $product->id,
-                  'name' => $product->name,
-                  'price' => $product->prixHT,
-                  'quantity' => $request->quantity,
-                  'attributes' => array(
-                      'size'=>$request->size, 'photo'=>$product->photoPrincipal)
-          ));
-          return redirect(route('user.cartsp.index'));
-      }
+          //fonction représentant le STORE
+          public function add(Request $request) //on recupere l'objet request et le produit dans la table
+          {
+              $product = product::find($request->id);
+              //ajouter un produit au panier
+                  Cart::add(array(
+                      'id' => $product->id,
+                      'name' => $product->name,
+                      'price' => $product->prixHT,
+                      'quantity' => $request->quantity,
+                      'attributes' => array(
+                          'size'=>$request->size, 'photo'=>$product->photoPrincipal)
+              ));
+              return redirect(route('admin.cartsp.index'));
+          }
 
     /**
      * Show the form for creating a new resource.
@@ -100,7 +100,7 @@ class CartpController extends Controller
             //'value' => $request->quantity
             
         ]);
-        return redirect(route('user.cartsp.index'));
+        return redirect(route('admin.cartsp.index'));
     }
 
     /**
@@ -111,8 +111,8 @@ class CartpController extends Controller
      */
     public function destroy($id)
     {
-        //
-        Cart::remove($id);
-        return redirect()->route('user.cartsp.index');
+         //
+         Cart::remove($id);
+         return redirect()->route('admin.cartsp.index');
     }
 }

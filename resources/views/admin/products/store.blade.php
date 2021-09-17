@@ -25,7 +25,7 @@
           <p class="card-text"><small class="text-muted">{{$product->prixTTC()}} €</small></p>
           <div class="mb-3">
 
-           <form action="{{route('admin.carts.add', ['id' => $product->id])}}" method="POST">
+           <form action="{{route('admin.cartsp.add', ['id' => $product->id])}}" method="POST">
             @csrf
             <label for="size">Taille</label>
             <select name="size" id="size" size="1" class="form-control mb-2">

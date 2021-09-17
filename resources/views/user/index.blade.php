@@ -2,7 +2,6 @@
 
 @section('mycontent')
 
-
 <div class="nikeThumb container">
     <div class="row row-cols-1 row-cols-md-3 g-3">
         <div class="teste1 col ">
@@ -20,7 +19,7 @@
         <div class="teste1 col">
              <div class="card h-100">
                 <div class="card-body text-center mb-3">
-                    <a class="femmes" href="#">Femmes</a>
+                    <a class="femmes" href="{{route('user.maintenance.index')}}">Femmes</a>
                 </div>
                 <div id="cross-fading" class="card-img-bottom h-100">
                  <img class="h-100" src="{{ asset('imagesneak/femme.jpeg')}}" alt="hommes">  
@@ -32,7 +31,7 @@
         <div class="teste1 col">
             <div class="card h-100">
                 <div class="card-body text-center mb-3">
-                    <a href="#">Enfants</a>
+                    <a class="enfants" href="{{route('user.maintkids.index')}}">Enfants</a>
                 </div>
                 <img src="{{ asset('imagesneak/kid.jpeg')}}" class="card-img-bottom h-100" alt="enfants">
             </div>

@@ -32,7 +32,7 @@
         <div class="teste1 col">
             <div class="card h-100">
                 <div class="card-body text-center mb-3">
-                    <a href="#">Enfants</a>
+                    <a class="enfants" href="#">Enfants</a>
                 </div>
                 <img src="{{ asset('imagesneak/kid.jpeg')}}" class="card-img-bottom h-100" alt="enfants">
             </div>

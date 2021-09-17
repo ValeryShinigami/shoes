@@ -3,7 +3,7 @@
 @section('mycontent')
 
 
-<h1 class="d-flex justify-content-center">Tous les produits homme</h1>
+<h1 class="animate__animated animate__backInDown d-flex justify-content-center">Tous les produits homme</h1>
 
 <div class="album py-5 bg-light ">
       <div class="container">  

@@ -12,3 +12,8 @@ function randomImage() {
   randomImage();
   setInterval(randomImage, 500);
  
+$(".hover").mouseleave(
+  function() {
+    $(this).removeClass("hover");
+  }
+);

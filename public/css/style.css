@@ -17,7 +17,7 @@
 .card-img-top{
     transition: 0.30s; 
 }
-
+/*DEBUT CSS POUR EFFET IMAGE ACCUEIL hommes femmes*/
 #cross-fading img {
     width: 100%;
     position:absolute;
@@ -41,5 +41,99 @@
       .teste1{
           height: 425px;
       }
-
   }
+/*POLICE D'ECRITURE POUR LE SITE*/
+  *{
+    font-family: 'Montserrat', sans-serif;
+}
+/*DEBUT CSS POUR LA MAINTENANCE FEMMES et ENFANTS*/
+.snip1504 {
+  position: relative;
+  overflow: hidden;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  background-color: #fff;
+  
+}
+
+.snip1504 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.snip1504 img {
+  vertical-align: top;
+  backface-visibility: hidden;
+}
+
+.snip1504 figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.snip1504 h2,
+.snip1504 h4 {
+  margin: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+.snip1504 h2 {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.snip1504 h4 {
+  font-weight: normal;
+  font-style: italic;
+  color: #888;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.snip1504 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.snip1504:hover > img,
+.snip1504.hover > img {
+  opacity: 0.1;
+}
+
+.snip1504:hover h2,
+.snip1504.hover h2,
+.snip1504:hover h4,
+.snip1504.hover h4 {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+/*FIN CSS POUR LA MAINTENANCE FEMMES et ENFANTS*/
+
+/*lien class hommes femmes enfants*/
+
+.hommes, .femmes, .enfants {
+    color: black;
+}
+
+.hommes:hover, .femmes:hover, .enfants:hover {
+    text-decoration: none;
+}

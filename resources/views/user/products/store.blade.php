@@ -2,7 +2,7 @@
 
 @section('mycontent')
 
-<h1 class="d-flex justify-content-center">Détail nouveauté</h1>
+<h1 class="animate__animated animate__flip d-flex justify-content-center">Détail nouveauté</h1>
 
 
 <a href="{{route('user.index')}}"><span class="badge badge-primary mb-3 "><img src="https://img.icons8.com/material-sharp/24/ffffff/home.png"/></span></a>

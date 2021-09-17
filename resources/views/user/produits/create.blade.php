@@ -2,7 +2,7 @@
 
 @section('mycontent')
 
-<h1 class="d-flex justify-content-center">Détail produit</h1>
+<h1 class="animate__animated animate__flip d-flex justify-content-center">Détail produit</h1>
 
 
 
