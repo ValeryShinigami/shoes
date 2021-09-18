@@ -33,7 +33,10 @@
                 <div class="card-body text-center mb-3">
                     <a class="enfants" href="{{route('user.maintkids.index')}}">Enfants</a>
                 </div>
-                <img src="{{ asset('imagesneak/kid.jpeg')}}" class="card-img-bottom h-100" alt="enfants">
+                <div id="cross-fading" class="card-img-bottom h-100">
+                  <img src="{{ asset('imagesneak/ryan.jpg')}}" class="h-100" alt="enfants">
+                  <img id="top" src="{{ asset('imagesneak/kid.jpeg')}}" class="h-100" alt="enfants">
+                 </div>
             </div>
         </div>
     </div>
