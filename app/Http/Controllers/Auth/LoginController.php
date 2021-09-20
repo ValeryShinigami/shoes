@@ -47,7 +47,7 @@ class LoginController extends Controller
         }
         elseif (Auth::user()->role == 'user') //pour authentifier user
         {
-            return "/user/index";
+            return "/"; //redirection vers la route racine qui correspond au user.index
         }
     }
 
