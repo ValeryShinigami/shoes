@@ -31,7 +31,7 @@ Route::get('logout', function ()
 
 });
 
-Route::get('/user/index', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
+Route::get('/', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
 Route::get('/admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
 //route pour la création des produits en NOUVEAUTÉS sur la page principale
