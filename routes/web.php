@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -94,3 +97,8 @@ Route::delete('/admin/cartsp/delete/{id}', [App\Http\Controllers\Admin\CartpCont
 Route::get('/user/maintenance/index', [App\Http\Controllers\User\MaintenanceController::class, 'index'])->name('user.maintenance.index');
 //route maintenance kids
 Route::get('/user/maintkids/index', [App\Http\Controllers\User\MaintkidsController::class, 'index'])->name('user.maintkids.index');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
