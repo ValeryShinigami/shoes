@@ -83,7 +83,7 @@
                 </table>
                 <form action="{{--route()--}}" method="">
                    {{--<a class="btn btn-block btn-outline-dark" href="">Commander</a>--}}
-                    <button type="submit" class="btn btn-block btn-outline-dark">Payer</button>
+                    <button type="submit" class="btn btn-block btn-outline-dark">(Paypal en développement)</button>
                 </form>
                 
             </div>
