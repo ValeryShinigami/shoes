@@ -16,6 +16,9 @@ HTML/CSS/BOOTSTRAP/JAVASCRIPT
 Cibles:
 Les addicts de sneakers
 
+Lien:
+http://valery-corp.com/
+
 SneakersAddict vous souhaite une bonne visite
 
 See you soon.
