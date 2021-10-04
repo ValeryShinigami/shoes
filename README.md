@@ -2,7 +2,7 @@
 
 Projet: site e-commerce de vente de Sneakers
 
-le site est un site de vente de sneakers (chaussure) en ligne pour les collectionneurs et les passionés de sneakers.
+le site est un site de vente de sneakers (chaussure) en ligne pour les collectionneurs et les passionnés de sneakers.
 
 Afin de pouvoir trouver chaussure à vos pieds je vous invite à vous enregistrer et vous connecter
 par le biais de mon formulaire 100% sécurisé.
