@@ -39,7 +39,7 @@ class CartController extends Controller
                 'attributes' => array(
                     'size'=>$request->size, 'photo'=>$produit->photoPrincipal)
         ));
-        return redirect(route('user.carts.index'));
+        return redirect()->route('user.carts.index')->with(["success" => "Votre article a été ajouté au panier avec succès"]);
 
         
     }
@@ -54,7 +54,7 @@ class CartController extends Controller
             //'value' => $request->quantity
             
         ]);
-        return redirect(route('user.carts.index'));
+        return redirect()->route('user.carts.index')->with(["success" => "Votre article a bien été modifié"]);
     }
 
     /**
@@ -119,6 +119,6 @@ class CartController extends Controller
     {
         //
         Cart::remove($id);
-        return redirect()->route('user.carts.index');
+        return redirect()->route('user.carts.index')->with(["success" =>"Votre article a bien été supprimé avec succès"]);
     }
 }
