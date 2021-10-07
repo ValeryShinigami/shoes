@@ -50,7 +50,10 @@ Route::post('/admin/posts/store', [App\Http\Controllers\Admin\PostController::cl
 //création de la route produits homme OK
 Route::get('/admin/produits/index', [App\Http\Controllers\Admin\ProduitController::class, 'index'])->name('admin.produits.index');
 Route::get('/user/produits/index', [App\Http\Controllers\User\ProduitController::class, 'index'])->name('user.produits.index');
-
+//création de la route produits femme 
+Route::get('/admin/produitfemme/index', [App\Http\Controllers\Admin\ProduitfemmeController::class, 'index'])->name('admin.produitfemme.index');
+Route::get('/user/produitfemme/index', [App\Http\Controllers\User\ProduitfemmeController::class, 'index'])->name('user.produitfemme.index');
+//
 //création de la route du détail du produit homme OK
 Route::get('/admin/produits/create/{id}', [App\Http\Controllers\Admin\ProduitController::class, 'create'])->name('admin.produits.create');
 Route::get('/user/produits/create/{id}', [App\Http\Controllers\User\ProduitController::class, 'create'])->name('user.produits.create');

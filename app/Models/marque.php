@@ -14,4 +14,9 @@ class marque extends Model
     {
         return $this->hasMany(produit::class);
     }
+
+    public function produitfemme()
+    {
+        return $this->hasMany(produitfemme::class);
+    }
 }
