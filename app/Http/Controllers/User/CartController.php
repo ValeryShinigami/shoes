@@ -121,4 +121,12 @@ class CartController extends Controller
         Cart::remove($id);
         return redirect()->route('user.carts.index')->with(["success" =>"Votre article a bien été supprimé avec succès"]);
     }
+
+    public function clear($id)
+    {
+        //methode pour simuler un paiement réalisé en attendant paypal
+        Cart::clear($id);
+        return redirect()->route('user.carts.index')->with(["success" =>"Paimement réalisé avec succès"]);
+    }
+
 }

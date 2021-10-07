@@ -78,6 +78,7 @@ Route::get('/user/carts/index', [App\Http\Controllers\User\CartController::class
 Route::post('/user/carts/add/{id}', [App\Http\Controllers\User\CartController::class, 'add'])->name('user.carts.add');
 Route::put('/user/carts/update/{id}', [App\Http\Controllers\User\CartController::class, 'update'])->name('user.carts.update');
 Route::delete('/user/carts/delete/{id}', [App\Http\Controllers\User\CartController::class, 'destroy'])->name('user.carts.delete');
+Route::delete('/user/carts/clear/{id}', [App\Http\Controllers\User\CartController::class, 'clear'])->name('user.carts.clear');
 
 //création de la route Cart pour product (produit NOUVEAUTé)
 
