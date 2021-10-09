@@ -60,7 +60,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">{{$productt->name}}</button>
-                <a href="{{ route('user.produits.create', ['id' => $productt->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
+                <a href="{{ route('user.produits.create', ['id' => $productt->id])}}" class="voir btn btn-sm btn-outline-secondary">Voir</a>
               </div>
               <div class="text-muted">{{$productt->prixTTC()}} €</div>
             </div>

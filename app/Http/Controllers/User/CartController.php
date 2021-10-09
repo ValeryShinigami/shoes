@@ -132,7 +132,7 @@ class CartController extends Controller
     {
         //methode pour simuler un paiement réalisé en attendant paypal
         $produitclear = Cart::clear();
-        return redirect()->route('user.carts.index')->with(["warning" =>"Paiemement refusé"]);
+        return redirect()->route('user.carts.index')->with(["warning" =>"Paiemement refusé choisissez une quantité supérieur à zéro svp"]);
     }
 
 }

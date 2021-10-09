@@ -143,3 +143,8 @@
 .hommes:hover, .femmes:hover, .enfants:hover {
     text-decoration: none;
 }
+
+/*bouton VOIR*/
+.voir {
+  background-color: #cfd8dc;
+}

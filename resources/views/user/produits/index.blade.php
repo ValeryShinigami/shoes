@@ -20,7 +20,7 @@
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->marque->name}}</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">{{$produit->name}}</button>
-                    <a href="{{ route('user.produits.create',['id' => $produit->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
+                    <a href="{{ route('user.produits.create',['id' => $produit->id])}}" class="voir btn btn-sm btn-outline-secondary">Voir</a>
                   </div>
                   <div class="text-muted">{{ $produit->prixTTC() }} €</div> {{--number_format() fonction php pour indiquer le nombre après la virgule --}}
                 </div>
