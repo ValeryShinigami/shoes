@@ -48,24 +48,30 @@
     <div class="container">  
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {{--dump($products)--}}
-        @foreach ($products as $product)
-
-          <div class="col mb-4">
-          <div class="card shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="{{asset('productsImages/'.$product->photoPrincipal)}}" alt="shoes">
-            <div class="card-body">
-              <p class="card-text">{{$product->description}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">{{$product->name}}</button>
-                  <a href="{{ route('user.products.store', ['id' => $product->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
-                </div>
-                <div class="text-muted">{{$product->prixTTC()}} €</div>
+        
+      
+        @foreach ($produits as $productt)
+        
+        <div class="col mb-4">
+        <div class="card shadow-sm">
+          <img class="card-img-top" width="100%" height="225" src="{{ asset('produitsImages/'.$productt->photoPrincipal)}}" alt="shoes">
+          <div class="card-body">
+            <p class="card-text">{{$productt->description}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">{{$productt->name}}</button>
+                <a href="{{ route('user.produits.create', ['id' => $productt->id])}}" class="btn btn-sm btn-outline-secondary">Voir</a>
               </div>
+              <div class="text-muted">{{$productt->prixTTC()}} €</div>
             </div>
           </div>
-          </div>
-        @endforeach
+        </div>
+        </div>
+        
+      @endforeach
+            
+        
+       
 
     </div>
 </div>

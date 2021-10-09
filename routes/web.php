@@ -3,6 +3,7 @@
 
 
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -50,10 +51,9 @@ Route::post('/admin/posts/store', [App\Http\Controllers\Admin\PostController::cl
 //création de la route produits homme OK
 Route::get('/admin/produits/index', [App\Http\Controllers\Admin\ProduitController::class, 'index'])->name('admin.produits.index');
 Route::get('/user/produits/index', [App\Http\Controllers\User\ProduitController::class, 'index'])->name('user.produits.index');
-//création de la route produits femme 
-Route::get('/admin/produitfemme/index', [App\Http\Controllers\Admin\ProduitfemmeController::class, 'index'])->name('admin.produitfemme.index');
-Route::get('/user/produitfemme/index', [App\Http\Controllers\User\ProduitfemmeController::class, 'index'])->name('user.produitfemme.index');
-//
+
+
+
 //création de la route du détail du produit homme OK
 Route::get('/admin/produits/create/{id}', [App\Http\Controllers\Admin\ProduitController::class, 'create'])->name('admin.produits.create');
 Route::get('/user/produits/create/{id}', [App\Http\Controllers\User\ProduitController::class, 'create'])->name('user.produits.create');
@@ -81,7 +81,9 @@ Route::get('/user/carts/index', [App\Http\Controllers\User\CartController::class
 Route::post('/user/carts/add/{id}', [App\Http\Controllers\User\CartController::class, 'add'])->name('user.carts.add');
 Route::put('/user/carts/update/{id}', [App\Http\Controllers\User\CartController::class, 'update'])->name('user.carts.update');
 Route::delete('/user/carts/delete/{id}', [App\Http\Controllers\User\CartController::class, 'destroy'])->name('user.carts.delete');
-Route::delete('/user/carts/clear/{id}', [App\Http\Controllers\User\CartController::class, 'clear'])->name('user.carts.clear');
+Route::delete('/user/carts/clear', [App\Http\Controllers\User\CartController::class, 'clear'])->name('user.carts.clear');
+Route::delete('/user/carts/clear2', [App\Http\Controllers\User\CartController::class, 'clear2'])->name('user.carts.clear2');
+
 
 //création de la route Cart pour product (produit NOUVEAUTé)
 

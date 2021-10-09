@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\User;
 
 use Cart;
-use App\Models\produits;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\produitfemme;
+use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CartfemmeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,40 +21,25 @@ class CartController extends Controller
          $cartCollection = Cart::getContent(); //pour voir la collection que l'on a dans le pannier
          //dd($cartCollection);
          $total = Cart::getTotal();//pour récuperer le total dans le package github
-         return view('user.carts.index', compact('cartCollection', 'total'));
-          
+         return view('user.cartsfemme.index', compact('cartCollection', 'total'));
     }
-
 
     //fonction représentant le STORE
     public function add(Request $request) //on recupere l'objet request et le produit dans la table
     {
-        $produit = produits::find($request->id);
+        $produitfemme = produitfemme::find($request->id);
         //ajouter un produit au panier
             Cart::add(array(
-                'id' => $produit->id,
-                'name' => $produit->name,
-                'price' => $produit->prixHT,
+                'id' => $produitfemme->id,
+                'name' => $produitfemme->name,
+                'price' => $produitfemme->prixHT,
                 'quantity' => $request->quantity,
                 'attributes' => array(
-                    'size'=>$request->size, 'photo'=>$produit->photoPrincipal)
+                    'size'=>$request->size, 'photo'=>$produitfemme->photoPrincipal)
         ));
-        return redirect()->route('user.carts.index')->with(["success" => "Votre article a été ajouté au panier avec succès"]);
+        return redirect()->route('user.cartsfemme.index')->with(["success" => "Votre article a été ajouté au panier avec succès"]);
 
         
-    }
-
-    public function update(Request $request, $id)
-    {
-        //fonction permettant d'augmenter diminuer la quantité
-        Cart::update($id, [
-            //'quantity' => $request->quantity +1,
-            'quantity' => ['relative' => false, 'value'=> $request->quantity]
-            //relative' => false,
-            //'value' => $request->quantity
-            
-        ]);
-        return redirect()->route('user.carts.index')->with(["success" => "Votre article a bien été modifié"]);
     }
 
     /**
@@ -107,7 +92,19 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+    public function update(Request $request, $id)
+    {
+        //
+        //fonction permettant d'augmenter diminuer la quantité
+        Cart::update($id, [
+            //'quantity' => $request->quantity +1,
+            'quantity' => ['relative' => false, 'value'=> $request->quantity]
+            //relative' => false,
+            //'value' => $request->quantity
+            
+        ]);
+        return redirect()->route('user.cartsfemme.index')->with(["success" => "Votre article a bien été modifié"]);
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -122,17 +119,12 @@ class CartController extends Controller
         return redirect()->route('user.carts.index')->with(["success" =>"Votre article a bien été supprimé avec succès"]);
     }
 
-    public function clear()
+    public function clear($id)
     {
         //methode pour simuler un paiement réalisé en attendant paypal
-        $produitclear = Cart::clear();
-        return redirect()->route('user.carts.index')->with(["success" =>"Paiemement réalisé avec succès"]);
+        Cart::clear($id);
+        return redirect()->route('user.carts.index')->with(["success" =>"Paimement réalisé avec succès"]);
     }
-    public function clear2()
-    {
-        //methode pour simuler un paiement réalisé en attendant paypal
-        $produitclear = Cart::clear();
-        return redirect()->route('user.carts.index')->with(["warning" =>"Paiemement refusé"]);
-    }
+
 
 }

@@ -213,6 +213,27 @@ class ProduitsSeeder extends Seeder
                     "photoPrincipal" => "disc.jpeg",
                     "marque_id" => "4"
                 ]);
+                $produits = produits::create([
+                    "name" => "jordan",
+                    "prixHT" => "600",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "jordan.jpeg",
+                    "marque_id" => "1"
+                ]);
+                $produits = produits::create([
+                    "name" => "nike",
+                    "prixHT" => "850",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "nike.jpeg",
+                    "marque_id" => "1"
+                ]);
+                $produits = produits::create([
+                    "name" => "nike2",
+                    "prixHT" => "750",
+                    "description" => "Sneaker qui revisite de manière innovante et audacieuse les fonctionnalités que vous aimez: durabilité, confort et style",
+                    "photoPrincipal" => "nike2.jpeg",
+                    "marque_id" => "1"
+                ]);
                 //BALENCIAGA
     }
 }

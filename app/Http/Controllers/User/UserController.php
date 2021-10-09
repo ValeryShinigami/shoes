@@ -6,6 +6,7 @@ use App\Models\marque;
 use App\Models\product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\produits;
 
 class UserController extends Controller
 {
@@ -21,10 +22,10 @@ class UserController extends Controller
     public function index()
     {
         //return view('user.index');
-        $products = product::all();
+        $produits = produits::where('nouveaute', 1)->get();
         //dd($products);
         $marques = marque::where('isOnline', 1)->get(); //pour que l'on puisse récupérer les marques sinon on a une erreur car il ne reconnait pas
-        return view('user.index', compact('products', 'marques'));
+        return view('user.index', compact('produits', 'marques'));
     
     }
 
@@ -37,8 +38,8 @@ class UserController extends Controller
     {
         //
          //pour récupérer les produits en nouveautés
-         $product = product::find($request->id);
-         return view ('user.create', compact('product'));
+         $produits = produits::find($request->id);
+         return view ('user.create', compact('produit'));
 
     }
 }

@@ -104,13 +104,27 @@
                    {{--<a class="btn btn-block btn-outline-dark" href="">Commander</a>--}}
                     <button type="submit" class="btn btn-block btn-outline-dark">(Paypal en développement)</button>
                 </form>
-                @foreach ($cartCollection as $produit)
+                {{--@foreach ($cartCollection as $produit)
                 <form action="{{route('user.carts.clear', $produit->id)}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" value="supprimer" class="btn btn-block btn-outline-dark" onclick="return confirm('confirmer achat?')">Payer</button>
                   </form> 
-                  @endforeach
+                  @endforeach--}}
+                
+                  @if ($total >= 1 )
+                  <form action="{{route('user.carts.clear', $produitclear ?? '')}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" value="supprimer" class="btn btn-block btn-outline-dark" onclick="return confirm('confirmer achat?')">Payer</button>
+                  </form> 
+                  @else
+                  <form action="{{route('user.carts.clear2', $produitclear ?? '')}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" value="supprimer" class="btn btn-block btn-outline-dark" onclick="return alert('Achat impossible')">Payer</button>
+                  </form> 
+                  @endif
             </div>
         </section>
     
