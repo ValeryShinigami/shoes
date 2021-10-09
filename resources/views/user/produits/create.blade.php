@@ -4,7 +4,7 @@
 
 <h1 class="animate__animated animate__flip d-flex justify-content-center">Détail produit</h1>
 
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mx-auto mb-3" style="max-width: 540px;">
     
     <div class="row g-0">
       <div class="col-md-4">
