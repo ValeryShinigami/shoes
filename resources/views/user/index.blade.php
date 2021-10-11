@@ -59,7 +59,8 @@
             <p class="card-text">{{$productt->description}}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">{{$productt->name}}</button>
+                <button type="button" class="btn  btn-sm btn-outline-secondary">{{$productt->marque->name}}</button>
+                <button type="button" class="btn  btn-sm btn-outline-secondary">{{$productt->name}}</button>
                 <a href="{{ route('user.produits.create', ['id' => $productt->id])}}" class="voir btn btn-sm btn-outline-secondary">Voir</a>
               </div>
               <div class="text-muted">{{$productt->prixTTC()}} €</div>
