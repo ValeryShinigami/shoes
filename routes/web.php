@@ -34,11 +34,11 @@ Route::get('logout', function ()
     return redirect()->route('login');
 
 });
-
+//ROUTE PAGE D'ACCUEIL
 Route::get('/', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.index');
 //Route::get('/admin/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
-//route pour la création des produits en NOUVEAUTÉS sur la page principale
+//route pour la création des produits en NOUVEAUTÉS sur la page ACCUEIL
 //Route::get('/admin/index/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.create');
 Route::get('/user/index/create', [App\Http\Controllers\User\UserController::class, 'create'])->name('user.create');
 
@@ -60,7 +60,7 @@ Route::get('/user/produits/create/{id}', [App\Http\Controllers\User\ProduitContr
 
 //création de la route du détail du product NOUVEAUTÉ homme
 //Route::get('/admin/products/store/{id}', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('admin.products.store');
-Route::get('/user/products/store/{id}', [App\Http\Controllers\User\ProductController::class, 'store'])->name('user.products.store');
+//Route::get('/user/products/store/{id}', [App\Http\Controllers\User\ProductController::class, 'store'])->name('user.products.store');
 
 
 //création de la route des Marques pour trier les produits par marque OK
@@ -87,10 +87,10 @@ Route::delete('/user/carts/clear2', [App\Http\Controllers\User\CartController::c
 
 //création de la route Cart pour product (produit NOUVEAUTé)
 
-Route::get('/user/cartsp/index', [App\Http\Controllers\User\CartpController::class, 'index'])->name('user.cartsp.index');
-Route::post('/user/cartsp/add/{id}', [App\Http\Controllers\User\CartpController::class, 'add'])->name('user.cartsp.add');
-Route::put('/user/cartsp/update/{id}', [App\Http\Controllers\User\CartpController::class, 'update'])->name('user.cartsp.update');
-Route::delete('/user/cartsp/delete/{id}', [App\Http\Controllers\User\CartpController::class, 'destroy'])->name('user.cartsp.delete');
+//Route::get('/user/cartsp/index', [App\Http\Controllers\User\CartpController::class, 'index'])->name('user.cartsp.index');
+//Route::post('/user/cartsp/add/{id}', [App\Http\Controllers\User\CartpController::class, 'add'])->name('user.cartsp.add');
+//Route::put('/user/cartsp/update/{id}', [App\Http\Controllers\User\CartpController::class, 'update'])->name('user.cartsp.update');
+//Route::delete('/user/cartsp/delete/{id}', [App\Http\Controllers\User\CartpController::class, 'destroy'])->name('user.cartsp.delete');
 
 
 //Route::get('/admin/cartsp/index', [App\Http\Controllers\Admin\CartpController::class, 'index'])->name('admin.cartsp.index');
@@ -98,7 +98,7 @@ Route::delete('/user/cartsp/delete/{id}', [App\Http\Controllers\User\CartpContro
 //Route::put('/admin/cartsp/update/{id}', [App\Http\Controllers\Admin\CartpController::class, 'update'])->name('admin.cartsp.update');
 //Route::delete('/admin/cartsp/delete/{id}', [App\Http\Controllers\Admin\CartpController::class, 'destroy'])->name('admin.cartsp.delete');
 
-//création de la route MAINTENANCE
+//création de la route MAINTENANCE FEMMES ET ENFANTS
 //route maintenance femmes
 Route::get('/user/maintenance/index', [App\Http\Controllers\User\MaintenanceController::class, 'index'])->name('user.maintenance.index');
 //route maintenance kids
