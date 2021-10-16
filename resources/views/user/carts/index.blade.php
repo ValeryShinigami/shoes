@@ -102,7 +102,7 @@
                 </table>
                 <form action="{{--route()--}}" method="">
                    {{--<a class="btn btn-block btn-outline-dark" href="">Commander</a>--}}
-                    {{--<button type="submit" class="btn btn-block btn-outline-dark">(Paypal en développement)</button>--}}
+                    {{--<button type="submit" class="btn btn-block btn-outline-dark">(Paypal en développement)</butt}}
                 </form>
                 {{--@foreach ($cartCollection as $produit)
                 <form action="{{route('user.carts.clear', $produit->id)}}" method="POST">

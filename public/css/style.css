@@ -149,4 +149,9 @@
   background-color: #cfd8dc;
 }
 
+.container1{
+background-image:url(../imagesneak/wall.jpg);
+background-repeat: repeat;
+background-size: contain;
+}
 
