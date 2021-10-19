@@ -125,13 +125,13 @@ class CartController extends Controller
     public function clear()
     {
         //methode pour simuler un paiement réalisé en attendant paypal
-        $produitclear = Cart::clear();
-        return redirect()->route('user.carts.index')->with(["success" =>"Paiemement réalisé avec succès"]);
+        Cart::clear();
+        return redirect()->route('user.carts.index')>with(["success" =>"Votre article a bien été supprimé avec succès"]);
     }
     public function clear2()
     {
         //methode pour simuler un paiement réalisé en attendant paypal
-        $produitclear = Cart::clear();
+        Cart::clear();
         return redirect()->route('user.carts.index')->with(["warning" =>"Paiemement refusé choisissez une quantité supérieur à zéro svp"]);
     }
 
