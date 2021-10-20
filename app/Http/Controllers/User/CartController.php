@@ -126,7 +126,7 @@ class CartController extends Controller
     {
         //methode pour simuler un paiement réalisé en attendant paypal
         Cart::clear();
-        return redirect()->route('user.carts.index')->with(["success" => "Merci d'avoir acheter sur SneakersAddict"]);
+        return redirect()->route('user.carts.index')->with(["success" => "Merci d'avoir acheté sur SneakersAddict"]);
     }
     public function clear2()
     {
