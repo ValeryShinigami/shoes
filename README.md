@@ -11,7 +11,7 @@ Ainsi vous entrerez dans le monde de la passion de la sneakers :-)
 
 Technos:
 PHP/LARAVEL
-HTML/CSS/BOOTSTRAP/JAVASCRIPT
+HTML/CSS/BOOTSTRAP/JAVASCRIPT/MYSQL
 
 Cibles:
 Les addicts de sneakers
@@ -22,3 +22,6 @@ http://valery-corp.com/
 SneakersAddict vous souhaite une bonne visite
 
 See you soon.
+
+
+![Capture d’écran 2022-02-23 à 10 39 43](https://user-images.githubusercontent.com/77153796/155335628-9a5bf458-a33e-429f-b20c-fbae626d162c.png)
